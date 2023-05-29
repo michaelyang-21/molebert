@@ -1,5 +1,8 @@
 import torch
 from torchvision.models import resnet18
+import torchvision.transforms as transforms
+import torchvision.datasets as datasets
+from torch.utils.data import random_split
 
 import matplotlib
 matplotlib.use('Agg')
@@ -20,7 +23,9 @@ import numpy as np
 from model import GNN, GNN_graphpred
 from sklearn.metrics import roc_auc_score
 
+from splitters import *
 from splitters import scaffold_split
+from splitters import random_scaffold_split
 import pandas as pd
 import os
 import shutil
